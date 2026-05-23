@@ -71,7 +71,7 @@
     border-radius: 999px;
     font-size: 13px;
     color: var(--ink-2);
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
   :global(.hero-status .dot) {
     width: 8px;

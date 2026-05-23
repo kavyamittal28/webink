@@ -5,33 +5,53 @@
 
   let trackEl = $state(null);
   let paused = $state(false);
-  let isDragging = false;
+  let tracking = false;
+  let dragLocked = false;
   let dragStartX = 0;
+  let dragStartY = 0;
   let dragOffset = 0;
 
   function onPointerDown(e) {
     if (e.target.closest('a')) return;
-    isDragging = true;
-    paused = true;
+    tracking = true;
+    dragLocked = false;
     dragStartX = e.clientX;
+    dragStartY = e.clientY;
     dragOffset = 0;
-    trackEl.style.animationPlayState = 'paused';
-    trackEl.setPointerCapture(e.pointerId);
   }
 
   function onPointerMove(e) {
-    if (!isDragging) return;
+    if (!tracking) return;
+    const dx = e.clientX - dragStartX;
+    const dy = e.clientY - dragStartY;
+
+    if (!dragLocked) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      // Vertical intent wins → let the page scroll
+      if (Math.abs(dy) > Math.abs(dx)) {
+        tracking = false;
+        return;
+      }
+      dragLocked = true;
+      paused = true;
+      trackEl.style.animationPlayState = 'paused';
+      trackEl.setPointerCapture(e.pointerId);
+    }
+
     e.preventDefault();
-    dragOffset = e.clientX - dragStartX;
+    dragOffset = dx;
     trackEl.style.marginLeft = `${dragOffset}px`;
   }
 
   function onPointerUp() {
-    if (!isDragging) return;
-    isDragging = false;
-    trackEl.style.marginLeft = '';
-    trackEl.style.animationPlayState = '';
-    paused = false;
+    if (!tracking) return;
+    tracking = false;
+    if (dragLocked) {
+      dragLocked = false;
+      trackEl.style.marginLeft = '';
+      trackEl.style.animationPlayState = '';
+      paused = false;
+    }
   }
 </script>
 
