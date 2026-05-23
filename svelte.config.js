@@ -8,8 +8,8 @@ const config = {
   kit: {
     // Static site (great for SEO + CDN + cheap hosting on Cloudflare / Netlify / Vercel / GitHub Pages)
     adapter: adapter({
-      pages: 'build',
-      assets: 'build',
+      pages: 'public',
+      assets: 'public',
       fallback: undefined,
       precompress: true,
       strict: true
