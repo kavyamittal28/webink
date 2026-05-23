@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"></stop>
+      <stop offset="1" stop-color="#1a1a1a"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"></rect>
+  <g transform="translate(80 80)">
+    <rect width="54" height="54" rx="12" fill="#d4ff3a"></rect>
+    <text x="27" y="40" font-family="Space Grotesk, sans-serif" font-size="34" font-weight="700" fill="#0a0a0a" text-anchor="middle">i</text>
+    <text x="74" y="38" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="600" fill="#f5f5f4">inkweb<tspan fill="#6b6b66" font-weight="400">/studio</tspan></text>
+  </g>
+  <text x="80" y="340" font-family="Space Grotesk, sans-serif" font-size="92" font-weight="700" fill="#f5f5f4" letter-spacing="-4">Websites that</text>
+  <text x="80" y="430" font-family="Space Grotesk, sans-serif" font-size="92" font-weight="700" fill="#a8a8a3" letter-spacing="-4">look <tspan font-family="Instrument Serif, serif" font-style="italic" fill="#a8a8a3">expensive</tspan></text>
+  <text x="80" y="520" font-family="Space Grotesk, sans-serif" font-size="92" font-weight="700" fill="#f5f5f4" letter-spacing="-4">and load <tspan fill="#d4ff3a">fast.</tspan></text>
+  <text x="80" y="580" font-family="JetBrains Mono, monospace" font-size="20" fill="#6b6b66" letter-spacing="3">FREELANCE WEB STUDIO · @INKWEB.OFFICIAL</text>
+</svg>
